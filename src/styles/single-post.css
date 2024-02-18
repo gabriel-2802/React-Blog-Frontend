@@ -14,11 +14,16 @@
     object-fit: cover;
   }
   
+  .singlePostImg:hover {
+      box-shadow: 0px 3px 15px #b1aeae;
+      transition: 0.3s ease-in;
+  }
   .singlePostTitle {
     text-align: center;
     margin: 10px;
     font-size: 28px;
     font-family: "Lora", sans-serif;
+    color: #b1aeae;
   }
   
   .singlePostEdit {
@@ -32,10 +37,17 @@
   }
   
   .singlePostIcon:first-child {
-    color: teal;
+    color: rgb(148, 16, 148);
   }
   .singlePostIcon:last-child {
-    color: tomato;
+    color: rgb(252, 69, 103);
+  }
+
+  .singlePostIcon:hover {
+    background-color: rgb(148, 16, 148);
+    color: black;
+    border-radius: 5px;
+    
   }
   
 
@@ -46,7 +58,7 @@
     text-align: left;
     margin-bottom: 20px;
     font-size: 16px;
-    color: #be9656;
+    color: rgb(159, 86, 159);
     font-family: "Varela Round", Arial, Helvetica, sans-serif;
   }
 
@@ -56,7 +68,7 @@
   }
 
   .singlePostDesc {
-    color: #666;
+    color: rgb(244, 238, 238);
     font-size: 18px;
     line-height: 25px;
     display: block;

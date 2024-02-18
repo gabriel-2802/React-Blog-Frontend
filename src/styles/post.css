@@ -12,6 +12,11 @@
     object-fit: cover;
     border-radius: 7px;
   }
+
+  .postImg:hover {
+    box-shadow: 0px 3px 15px #b1aeae;
+    transition: 0.3s ease-in;
+  }
   
   .postInfo {
     display: flex;

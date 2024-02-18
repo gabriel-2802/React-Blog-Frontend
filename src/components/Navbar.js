@@ -22,7 +22,7 @@ function navbar() {
         </div>
         <div className='topRight'>
             <Link to='profile' className='link'> <img className='topImg' src={Image} alt='' /> </Link>
-            <i className='topSearchIcon'> <SearchIcon /> </i>
+            <i className='topSearchIcon'> <button className='topSearchButton'> <SearchIcon/> </button> </i>
         </div>
       
     </div>

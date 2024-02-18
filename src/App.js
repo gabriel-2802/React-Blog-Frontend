@@ -8,6 +8,7 @@ import Log from './pages/Login'
 import Profile from './pages/Profile'
 import Register from './pages/Register'
 import NotFound from './pages/NotFound';
+import Single from './pages/Single';
 
 
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/login' element={<Log />} />
           <Route path='/register' element={<Register />} />
           <Route path='/*' element={<NotFound />}> </Route>
+          <Route path='/post' element={<Single />} />
         </Routes>
     </Router>
     </div>
