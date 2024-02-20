@@ -2,13 +2,12 @@ import React from 'react'
 import '../styles/posts.css'
 import Post from './Post'
 
-function Posts() {
+function Posts({posts}) {
   return (
     <div className='posts'>
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      {posts.map((post) => {
+        return <Post post={post}/>
+      })}
     </div>
   )
 }

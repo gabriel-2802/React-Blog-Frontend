@@ -7,3 +7,8 @@
 button:hover {
     background-color:  rgb(237, 241, 141);
 }
+
+ .link {
+    text-decoration: none;
+    color: white;
+}

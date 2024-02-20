@@ -11,7 +11,6 @@ import NotFound from './pages/NotFound';
 import Single from './pages/Single';
 
 
-
 function App() {
   return (
     <div className='app'>
@@ -25,7 +24,7 @@ function App() {
           <Route path='/login' element={<Log />} />
           <Route path='/register' element={<Register />} />
           <Route path='/*' element={<NotFound />}> </Route>
-          <Route path='/post' element={<Single />} />
+          <Route path='/post/:postId' element={<Single />} />
         </Routes>
     </Router>
     </div>

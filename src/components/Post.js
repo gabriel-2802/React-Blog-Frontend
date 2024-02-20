@@ -1,8 +1,9 @@
 import React from 'react'
 import '../styles/post.css'
 import Image from '../assets/pexels-sheep-1846422.jpg'
+import { Link } from 'react-router-dom'
 
-function Post() {
+function Post({post}) {
   return (
     <div className='post'>
         <img src={Image} alt='' className='postImg' />
@@ -10,9 +11,12 @@ function Post() {
             <div className="postCats">
                 <span className="postCat"> Statements </span>
             </div>
-            <span className="postTitle"> Lorem ipsum dolor sit amet. </span>
+            <Link to={`/post/${post.id}`} className='postLink'>
+              <span className="postTitle"> {post.title} </span>
+            </Link>
+            <span className='postDesc'> {post.content.substring(0,15)}... </span>
             <hr />
-            <span className="postDate"> 1 hour ago </span>
+            <span className="postDate"> {new Date(post.date).toDateString()} </span>
         </div>
     </div>
   )

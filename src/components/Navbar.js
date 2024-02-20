@@ -15,9 +15,9 @@ function navbar() {
         </div>
         <div className='topCenter'>
             <ul className='topList'>
-                <Link to='/' className='link'> <li className='topListItem'> Home </li> </Link>
-                <Link to='/write' className='link'> <li className='topListItem'> Write </li> </Link>
-                <Link to='/login' className='link'> <li className='topListItem'> Login </li> </Link>
+                <Link to='/' className='homeLink'> <li className='topListItem'> Home </li> </Link>
+                <Link to='/write' className='homeLink'> <li className='topListItem'> Write </li> </Link>
+                <Link to='/login' className='homeLink'> <li className='topListItem'> Login </li> </Link>
             </ul>
         </div>
         <div className='topRight'>

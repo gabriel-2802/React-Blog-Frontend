@@ -9,9 +9,6 @@ function Profile() {
   return (
     <div className='profile'>
         <div className="profileWrapper">
-            <div className="profileTitle">
-                <span className='profileDeleteTitle'> <DeleteForeverIcon /> </span>
-            </div>
             <form action="" className="profileForm">
                 <label> Profile Picture </label>
                 <div className="profilePP">
