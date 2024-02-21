@@ -9,9 +9,15 @@ import Profile from './pages/Profile'
 import Register from './pages/Register'
 import NotFound from './pages/NotFound';
 import Single from './pages/Single';
+import { useContext } from 'react';
+import { LoginContext } from './context/Context';
 
 
 function App() {
+
+  const {user, jwt} = useContext(LoginContext);
+  console.log(user);
+
   return (
     <div className='app'>
       <Router>
@@ -25,6 +31,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/*' element={<NotFound />}> </Route>
           <Route path='/post/:postId' element={<Single />} />
+          <Route path='post/edit/:postId' element={<Write />} />
         </Routes>
     </Router>
     </div>

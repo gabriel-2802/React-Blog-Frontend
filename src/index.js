@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import {DevSupport} from "@react-buddy/ide-toolbox";
 import {ComponentPreviews, useInitial} from "./dev";
+import { LoginContextProvider } from './context/Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -11,7 +12,9 @@ root.render(
         <DevSupport ComponentPreviews={ComponentPreviews}
                     useInitialHook={useInitial}
         >
-            <App/>
+            <LoginContextProvider>
+                <App/>
+            </LoginContextProvider>
         </DevSupport>
     </React.StrictMode>
 );

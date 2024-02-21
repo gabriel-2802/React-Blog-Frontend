@@ -9,7 +9,7 @@ function Post({post}) {
         <img src={Image} alt='' className='postImg' />
         <div className="postInfo">
             <div className="postCats">
-                <span className="postCat"> Statements </span>
+                <span className="postCat"> {post.category} </span>
             </div>
             <Link to={`/post/${post.id}`} className='postLink'>
               <span className="postTitle"> {post.title} </span>

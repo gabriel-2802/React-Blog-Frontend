@@ -78,3 +78,22 @@
     font-size: 30px;
     font-weight: 600;
   }
+
+  .postButton {
+    background: none; /* Removes the background */
+    border: none; /* Removes the border */
+    padding: 0; /* Removes padding */
+    cursor: pointer; /* Optional: Changes cursor on hover */
+    display: inline; /* Aligns buttons inline */
+    outline: none; /* Removes the outline */
+    margin: 0;
+    justify-content: center;
+    width: fit-content;
+    
+  }
+
+  .postButton:hover {
+    background: none;
+    border: none;
+    outline: none;
+  }

@@ -6,14 +6,14 @@ import Sidebar from '../components/Sidebar'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import { useLocation } from 'react-router-dom'
-
+import { useContext } from 'react';
+import { LoginContext } from '../context/Context';
 
 function Home() {
   const [posts, setPosts] = useState([]);
   const {search} = useLocation(null);
   const category = search.split("=")[1];
-  console.log(category);
-
+  
   useEffect(() => {
     const fetchPosts = async () => {
       if (search) {

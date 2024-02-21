@@ -3,10 +3,18 @@ import '../styles/navbar.css'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Image from '../assets/top.jpeg'
 import SearchIcon from '@mui/icons-material/Search';
-import {Link} from 'react-router-dom'
-import Profile from '../pages/Profile'
+import {Link} from 'react-router-dom';
+import { useContext } from 'react';
+import { LoginContext } from '../context/Context';
+import ProfileImage from '../assets/profile.jpg';
+import {isAdmin} from '../context/Context';
 
-function navbar() {
+function Navbar() {
+    const {user, dispatch} = useContext(LoginContext);
+    const handleLogout = () => {
+        dispatch({type: "LOGOUT"});
+    }
+
   return (
     <div className='top'>
         <div className='topLeft'>
@@ -15,13 +23,24 @@ function navbar() {
         </div>
         <div className='topCenter'>
             <ul className='topList'>
-                <Link to='/' className='homeLink'> <li className='topListItem'> Home </li> </Link>
-                <Link to='/write' className='homeLink'> <li className='topListItem'> Write </li> </Link>
-                <Link to='/login' className='homeLink'> <li className='topListItem'> Login </li> </Link>
+                <Link to='/write' className='homeLink'>
+                    <li className='topListItem'> {isAdmin(user) && "Write"} </li>
+                </Link>
+                <Link to='/' className='homeLink'>
+                    <li className='topListItem'> Home </li>
+                </Link>
+                <Link to='/login' className='homeLink'>
+                    <li className='topListItem'> Login </li>
+                </Link>
+                <Link to='/' className='homeLink' onClick={handleLogout}>
+                    <li className='topListItem'> {user && "Logout"} </li>
+                </Link>
             </ul>
         </div>
         <div className='topRight'>
-            <Link to='profile' className='link'> <img className='topImg' src={Image} alt='' /> </Link>
+        <Link to='profile' className='link'> <img className='topImg'
+                                                    src={ user?.profilePicture != null ? user.profilePicture : ProfileImage
+                                                    } /> </Link>
             <i className='topSearchIcon'> <button className='topSearchButton'> <SearchIcon/> </button> </i>
         </div>
       
@@ -29,4 +48,4 @@ function navbar() {
   )
 }
 
-export default navbar
+export default Navbar

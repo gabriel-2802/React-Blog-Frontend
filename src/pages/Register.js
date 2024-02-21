@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom'
 import '../styles/login.css'
 import {useState} from 'react'
 import axios from 'axios'
-import Error from '../components/Error'
+import { useNavigate } from 'react-router-dom'
 
 function Register() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
+  const [errorText, setErrorText] = useState('');
+  const nav = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,10 +20,10 @@ function Register() {
       const response = await axios.post('http://localhost:8000/auth/register',
       {"username": username, "email": email, "password": password});
 
-      response.data && window.location.replace('/login');
+      response.data && nav('/login');
     } catch (error) {
-      console.log(error);
       setError(true);
+      setErrorText(error.response.data);
     }
   }
 
@@ -36,7 +38,7 @@ function Register() {
             <label> Password </label>
             <input type="password" placeholder=" enter your password..." className='logInput' onChange={e=>setPassword(e.target.value)}/>
             <button className="loginButton" type="submit"> Register </button>
-            {error && <Error></Error>}
+            {error && <span className='logError'> {errorText} </span>}
         </form>
         <button className="loginRegisterButton"> <Link to='/login' className='buttonLink'> Login </Link> </button>
       

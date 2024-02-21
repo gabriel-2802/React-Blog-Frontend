@@ -91,3 +91,15 @@ button {
     .profileSubmitButton {
         background-color: rgb(148, 16, 148);
     }
+
+  .profileError {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .profileSuccess {
+    color: rgb(121, 240, 121);
+    margin-top: 10px;
+    text-align: center;
+  }

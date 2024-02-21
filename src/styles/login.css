@@ -54,6 +54,10 @@ button {
     text-align: center;
     font-weight: bolder;
   }
+
+  .loginButton:disabled {
+    cursor: not-allowed;
+  }
   
   .loginRegisterButton {
     position: absolute;
@@ -70,4 +74,10 @@ button {
     color: #18191A;
     text-decoration: none;
     font-weight: bolder;
+  }
+
+  .logError {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
   }
